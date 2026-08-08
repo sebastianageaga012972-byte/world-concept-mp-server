@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: world-concept-mp
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
