@@ -1,10 +1,16 @@
-services:
-  - type: web
-    name: world-concept-mp
-    runtime: node
-    plan: free
-    buildCommand: npm install
-    startCommand: npm start
-    envVars:
-      - key: NODE_VERSION
-        value: 20.11.0
+# Exported from Render on 2026-08-09T03:45:38Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: world-concept-game
+      runtime: docker
+      repo: https://github.com/sebastianageaga012972-byte/world-concept-game
+      plan: free
+      region: oregon
+      dockerContext: .
+      dockerfilePath: ./Dockerfile
+      autoDeployTrigger: commit
